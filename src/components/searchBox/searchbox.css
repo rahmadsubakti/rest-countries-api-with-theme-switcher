@@ -1,0 +1,41 @@
+.searchbox-container {
+	padding: 15px 30px;
+	background-color: var(--element-bg);
+	border-radius: 4px;
+	width: 40%;
+	display: flex;
+	position: relative;
+}
+
+.searchbox-container svg {
+	margin-right: 25px;
+}
+
+.searchbox-container input {
+	border: none;
+	background-color: transparent;
+	color: var(--text);
+	font-family: inherit;
+	width: 100%;
+}
+
+.searchbox-container input:focus {
+	outline: none;
+}
+
+.search-result {
+	position: absolute;
+	z-index: 30;
+	left: 0;
+	top: 115%;
+	display: none;
+	background-color: var(--element-bg);
+	width: 100%;
+	max-height: 350px;
+	overflow: scroll;
+}
+
+.searchbox-container input:focus ~ .search-result,
+.searchbox-container .search-result .search-result__item:active {
+	display: block;
+}

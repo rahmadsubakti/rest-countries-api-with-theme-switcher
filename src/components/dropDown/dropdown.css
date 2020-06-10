@@ -1,0 +1,7 @@
+select.dropdown-container {
+	width: 15%;
+	background: var(--element-bg);
+	padding: 15px 23px;
+	position: relative;
+	color: var(--text);
+}
