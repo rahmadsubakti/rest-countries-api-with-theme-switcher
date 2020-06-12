@@ -1,3 +1,8 @@
+function numFormat(str) {
+	const num = parseInt(str);
+	return num.toLocaleString('id');
+}
+
 export const fetchAllCountries = () => {
 	fetch('https://restcountries.eu/rest/v2/all')
 		.then(response => response.json())
@@ -32,7 +37,7 @@ export const fetchCodeCountry = code => {
 				flag: result.flag,
 				code: result.alpha3Code.toLowerCase(),
 				capital: result.capital,
-				population: result.population,
+				population: numFormat(result.population),
 				region: result.region,
 				subregion: result.subregion,
 				topLevelDomain: result.topLevelDomain,

@@ -19,23 +19,23 @@
 	width: 100%;
 }
 
-.searchbox-container input:focus {
+.searchbox-container input:focus + .search-result {
 	outline: none;
+	display: block;
 }
 
 .search-result {
 	position: absolute;
+	display: none;
 	z-index: 30;
 	left: 0;
 	top: 115%;
-	display: none;
 	background-color: var(--element-bg);
 	width: 100%;
 	max-height: 350px;
-	overflow: scroll;
+	overflow-y: scroll;
 }
 
-.searchbox-container input:focus ~ .search-result,
-.searchbox-container .search-result .search-result__item:active {
+.search-result:hover {
 	display: block;
 }
