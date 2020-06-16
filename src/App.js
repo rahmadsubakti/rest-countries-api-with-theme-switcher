@@ -5,12 +5,13 @@ import {
   Route,
 } from "react-router-dom";
 
-import { Header } from 'components/header/header';
-import { ContentList } from 'components/contentList/contentList';
-import { CountryDetail } from 'components/countryDetail/countryDetail'
+import { Header } from 'components/container';
+import { ContentList } from 'components/page';
+import { CountryDetail } from 'components/page'
 
 import logo from './logo.svg';
 import './App.css';
+import './media.css';
 
 function App() {
   const [themeContext, setThemeContext] = useState('light')

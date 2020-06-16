@@ -1,0 +1,53 @@
+.select-container, .option-container {
+	border-radius: 5px;
+}
+
+.select-container {
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	padding: 18px 18px 18px 24px;
+	background-color: var(--element-bg);
+}
+
+.select-input {
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.select-current-value {
+	display: inline-block;
+	font-size: 13px;
+	width: 146px;
+}
+
+.select-input svg {
+	stroke: var(--text);
+}
+
+.option-container {
+	background-color: var(--element-bg);
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	left: 0;
+	top: calc(100% + 10px);
+	width: 100%;
+}
+
+.select-option {
+	cursor: pointer;
+	padding: 11px 24px;
+}
+
+.select-option:hover {
+	background-color: #99CCF4;
+}
+
+@media screen and (max-width: 375px) {
+	.select-container {
+		width: 50%;
+	}
+}

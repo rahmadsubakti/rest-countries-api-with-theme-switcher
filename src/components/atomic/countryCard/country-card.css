@@ -6,11 +6,9 @@
 .card .img-container {
 	width: 100%;
 	height: 180px;
-}
-
-.card img {
-	width: 100%;
-	height: 100%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 	border-radius: 5px 5px 0 0;
 }
 
@@ -18,12 +16,20 @@
 	padding: 30px 22px;
 }
 
-.card-info h3 {
-	margin-bottom: 30px;
+.card-info .name {
+	margin-bottom: 25px;
+}
+
+.card-info .name h3 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 195px;
 }
 
 .card-info p {
 	font-weight: 600;
+	margin-bottom: 12px;
 }
 
 .card-info p span {

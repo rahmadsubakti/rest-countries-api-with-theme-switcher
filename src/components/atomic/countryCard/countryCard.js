@@ -5,14 +5,16 @@ import './country-card.css';
 
 export const CountryCard = props => {
 	const url = `/alpha/${props.code}`
+	const style = {backgroundImage: `url(${props.flag})`}
 	return (
 		<Link to={url}>
 			<div className="card">
-				<div className="img-container">
-					<img src={props.flag} alt="flag" />
+				<div className="img-container" style={style}>
 				</div>
 				<div className="card-info">
-					<h3>{props.name}</h3>
+					<div className="name">
+						<h3>{props.name}</h3>
+					</div>
 					<p>Population: <span>{props.population}</span></p>
 					<p>Region: <span>{props.region}</span></p>
 					<p>Capital: <span>{props.capital}</span></p>

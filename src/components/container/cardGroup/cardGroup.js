@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { CountryCard } from 'components/countryCard/countryCard';
+import { CountryCard } from 'components/atomic';
 
 import './card-group.css'
 
@@ -12,7 +12,6 @@ export const CardGroup = props => {
 
 	const { country } = props;
 	useEffect(() => {
-		console.log('fetched')
 		fetch('https://restcountries.eu/rest/v2/all')
 			.then(response => response.json())
 			.then(result => result.map(item => ({
@@ -38,11 +37,11 @@ export const CardGroup = props => {
 			} else {
 				setCurrentList(list);
 			}
-		}, [country])
+		}, [country, list])
 
 	return (
 		<div className="cardgroup">
-			{currentList.map(item => <CountryCard {...item} />)}
+			{currentList.map((item,idx) => <CountryCard key={'country'+idx} {...item} />)}
 		</div>
 	)
 }

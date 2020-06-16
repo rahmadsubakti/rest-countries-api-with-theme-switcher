@@ -1,0 +1,12 @@
+.cardgroup {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 73px;
+}
+
+@media screen and (max-width: 375px) {
+	.cardgroup {
+		padding: 0 40px;
+		grid-template-columns: 1fr;
+	}
+}

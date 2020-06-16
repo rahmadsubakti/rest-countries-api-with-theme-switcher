@@ -1,0 +1,13 @@
+@media screen and (max-width: 375px) {
+	header {
+		padding: 33px 15px;
+	}
+
+	header h1 {
+		font-size: 16px;
+	}
+
+	main {
+		padding: 23px 15px;
+	}
+}

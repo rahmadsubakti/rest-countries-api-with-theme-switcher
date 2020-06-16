@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft} from '@fortawesome/free-solid-svg-icons';
-import { fetchCodeCountry, fetchCountryNameCode } from 'utils/fetchAPI';
+import { fetchCodeCountry } from 'utils/fetchAPI';
 
 import './country-detail.css';
 
@@ -15,8 +15,7 @@ export const CountryDetail = () => {
 	useEffect(() => {
 		fetchCodeCountry(code)
 			.then(result => setDetail(result))
-			//.then(() => document.title = 'Countries | ' +detail.name)
-	})
+	}, [code])
 
 	if (detail !== {}) {
 		let {
@@ -30,6 +29,7 @@ export const CountryDetail = () => {
 			topLevelDomain,
 			currencies,
 			languages,
+			borders
 		} = detail;
 
 		return (
@@ -40,7 +40,7 @@ export const CountryDetail = () => {
 					<div className="img-container">
 						<img src={flag} alt={flag} />
 					</div>
-					<div class="detail-info">
+					<div className="detail-info">
 						<h2>{name}</h2>
 						<ul>
 							<li><b>Native Name:</b> {nativeName}</li>
@@ -52,11 +52,37 @@ export const CountryDetail = () => {
 							<li><b>Currencies:</b> {currencies}</li>
 							<li><b>Languages:</b> {languages}</li>
 						</ul>
-						<p><b>Border Countries:</b> <span>France</span><span>Germany</span><span>Netherlands</span></p>
+						<Border bordersCode={borders} />				
 					</div>
 				</div>
 			</div>
 		)
 	}
 	return null;
+}
+
+const Border = props => {
+	const { bordersCode } = props;
+	// state
+	const [bordersName, setBordersName] = useState([]);
+
+	useEffect(() => {
+		if (bordersCode) {
+			fetch('https://restcountries.eu/rest/v2/all')
+			.then(response => response.json())
+			.then(result => result.filter(item => bordersCode.includes(item.alpha3Code)).map(item => item.name))
+			.then(result => setBordersName(result))
+		}
+	}, [bordersCode]);
+
+	return (
+		<table>
+			<tbody>
+				<tr>
+					<td><b>Border Countries:</b></td>
+					<td className='span-list'>{bordersName.map((item, idx) => <span key={'border'+idx}>{item}</span>)}</td>
+				</tr>
+			</tbody>
+		</table>
+	)
 }

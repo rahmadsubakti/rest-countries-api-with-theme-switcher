@@ -10,7 +10,7 @@ export const Header = props => {
 
 	return (
 		<header>
-			<h1 className="logo">Where in the world</h1>
+			<h1 className="logo">Where in the world?</h1>
 			<button 
 				className="toggle-theme__btn" 
 				onClick={handleClick}>

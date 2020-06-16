@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { SearchBox } from 'components/searchBox/searchBox';
-import { DropDown } from 'components/dropDown/dropDown';
+import { SearchBox } from 'components/atomic';
+import { DropDown } from 'components/container';
 
 import './input-container.css'
 

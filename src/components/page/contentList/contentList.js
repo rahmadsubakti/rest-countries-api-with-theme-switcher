@@ -1,16 +1,15 @@
 import React, { Fragment, useState } from 'react';
 
-import { InputContainer } from 'components/inputContainer/inputContainer';
-import { CardGroup } from 'components/cardGroup/cardGroup';
+import { InputContainer } from 'components/container';
+import { CardGroup } from 'components/container';
 
 export const ContentList = () => {
 
 	//useEffect(() => console.log('main'))
 	const [country, setCountry] = useState('');
 
-	const changeCountry = e => {
-		console.log(e.target.value);
-		setCountry(e.target.value);
+	const changeCountry = value => {
+		setCountry(value);
 	}
   return (
     <Fragment>

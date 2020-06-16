@@ -6,7 +6,7 @@
 
 [theme="light"] {
 	--background: hsl(0, 0%, 98%);
-	--element-bg: hsl(0, 0%, 100%);
+	--element-bg: hsl(0, 0%, 85%);
 	--text: hsl(200, 15%, 8%);
 }
 
@@ -17,7 +17,7 @@
 
 body {
   margin: 0;
-  padding: 20px;
+  padding: 0;
   font-family: 'Nunito Sans', sans-serif;  -webkit-font-smoothing: antialiased;
   background-color: var(--background);
 }
@@ -37,4 +37,12 @@ a {
 
 a:link, a:visited {
 	color: var(--text);
+}
+
+header, main {
+	padding: 0 80px;
+}
+
+main {
+	padding-top: 30px;
 }

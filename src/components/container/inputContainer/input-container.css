@@ -1,0 +1,12 @@
+.input-container {
+	margin: 0 0 45px 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+@media screen and (max-width: 375px) {
+	.input-container {
+		justify-content: flex-start;
+		flex-direction: column;
+	}
+}

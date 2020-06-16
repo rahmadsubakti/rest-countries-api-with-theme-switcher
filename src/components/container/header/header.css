@@ -2,10 +2,18 @@ header {
 	background-color: var(--element-bg);
 	display: flex;
 	justify-content: space-between;
+	padding-top: 28px;
+	padding-bottom: 28px;
 }
 
 button {
 	border: none;
 	background-color: inherit;
 	color: inherit;
+	cursor: pointer;
+	outline: none;
+}
+
+button svg {
+	margin-right: 10px;
 }
