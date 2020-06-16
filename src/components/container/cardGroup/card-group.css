@@ -4,6 +4,27 @@
 	grid-gap: 73px;
 }
 
+@media screen and (max-width: 1400px) {
+	.cardgroup {
+		grid-template-columns: repeat(3, 1fr);
+		grid-column-gap: 200px;
+	}
+}
+
+@media screen and (max-width: 1100px) {
+	.cardgroup {
+		grid-template-columns: repeat(2, 1fr);
+		grid-column-gap: 330px;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.cardgroup {
+		grid-template-columns: repeat(2, 1fr);
+		grid-column-gap: 100px;
+	}
+}
+
 @media screen and (max-width: 375px) {
 	.cardgroup {
 		padding: 0 40px;

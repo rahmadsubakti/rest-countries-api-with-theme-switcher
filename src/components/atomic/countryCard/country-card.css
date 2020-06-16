@@ -1,14 +1,34 @@
 .card {
 	background-color: var(--element-bg);
 	border-radius: 5px;
+	max-width: 265px;
+	width: 265px;
 }
 
 .card .img-container {
 	width: 100%;
 	height: 180px;
 	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
+	border-radius: 5px 5px 0 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card .img-container figure {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 5px 5px 0 0;
+}
+
+.card .img-container figure img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 	border-radius: 5px 5px 0 0;
 }
 

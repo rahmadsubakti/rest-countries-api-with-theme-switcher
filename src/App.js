@@ -9,8 +9,6 @@ import { Header } from 'components/container';
 import { ContentList } from 'components/page';
 import { CountryDetail } from 'components/page'
 
-import logo from './logo.svg';
-import './App.css';
 import './media.css';
 
 function App() {

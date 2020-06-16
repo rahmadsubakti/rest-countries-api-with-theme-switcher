@@ -43,6 +43,12 @@
 	display: block;
 }
 
+@media screen and (max-width: 1000px) {
+	.searchbox-container {
+		width: 50%;
+	}
+}
+
 @media screen and (max-width: 375px) {
 	.searchbox-container {
 		width: 100%;

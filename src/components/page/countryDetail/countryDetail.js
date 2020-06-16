@@ -34,7 +34,6 @@ export const CountryDetail = () => {
 
 		return (
 			<div className="detail-page">
-				{/*Replace button with link*/}
 				<Link to="/" className="back"><FontAwesomeIcon icon={faArrowLeft} />Back</Link>
 				<div className="detail-container">
 					<div className="img-container">

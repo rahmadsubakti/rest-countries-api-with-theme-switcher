@@ -26,6 +26,9 @@ export const SearchBox = () => {
 							setSearchResult(result)	;
 							setIsLoading(false)
 						})
+						.catch(error => {
+							setSearchResult('Not found')
+						})
 				}, 1000)
 		} else {
 			setSearchResult([])
@@ -37,12 +40,13 @@ export const SearchBox = () => {
 			<FontAwesomeIcon icon={faSearch} />
 			<input type="text" placeholder="Search for country" onKeyUp={handleKeyUp} />
 			<div className="search-result">
-				{!isLoading && searchResult.length !== 0
+				{/*!isLoading && searchResult.length !== 0
 					?
 						searchResult.map((item, i) => <SearchResultItem {...item} />)
 					:
-						<p>Please enter at least 3 characters</p>
-				}
+						<p>{searchResult}</p>
+				*/}
+				{searchResult !== [] && <p>{searchResult}</p>}
 			</div>
 		</div>
 	)
