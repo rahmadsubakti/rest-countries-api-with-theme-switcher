@@ -11,7 +11,6 @@ export const SearchBox = () => {
 
 	// state
 	const [searchResult, setSearchResult] = useState([]);
-	const [isLoading, setIsLoading] = useState(true);
 
 	// event handler
 	const handleKeyUp = e => {
@@ -20,14 +19,12 @@ export const SearchBox = () => {
 		if (value) {
 			timeout = setTimeout(
 				function() {
-					setIsLoading(true);
 					fetchSearchName(value)
 						.then(result => {
 							setSearchResult(result)	;
-							setIsLoading(false)
 						})
 						.catch(error => {
-							setSearchResult('Not found')
+							setSearchResult('404')
 						})
 				}, 1000)
 		} else {
@@ -40,13 +37,12 @@ export const SearchBox = () => {
 			<FontAwesomeIcon icon={faSearch} />
 			<input type="text" placeholder="Search for country" onKeyUp={handleKeyUp} />
 			<div className="search-result">
-				{/*!isLoading && searchResult.length !== 0
+				{Array.isArray(searchResult) && searchResult.length !== 0
 					?
 						searchResult.map((item, i) => <SearchResultItem {...item} />)
 					:
-						<p>{searchResult}</p>
-				*/}
-				{searchResult !== [] && <p>{searchResult}</p>}
+						searchResult === '404' && <p>Not found</p>
+				}
 			</div>
 		</div>
 	)
