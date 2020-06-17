@@ -1,33 +1,32 @@
 .cardgroup {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(4, 265px);
+	justify-content: space-between;
 	grid-gap: 73px;
 }
 
 @media screen and (max-width: 1400px) {
 	.cardgroup {
-		grid-template-columns: repeat(3, 1fr);
-		grid-column-gap: 200px;
+		grid-template-columns: repeat(3, 265px);
 	}
 }
 
 @media screen and (max-width: 1100px) {
 	.cardgroup {
-		grid-template-columns: repeat(2, 1fr);
-		grid-column-gap: 330px;
+		grid-template-columns: repeat(2, 265px);
 	}
 }
 
 @media screen and (max-width: 750px) {
 	.cardgroup {
-		grid-template-columns: repeat(2, 1fr);
-		grid-column-gap: 100px;
+		grid-template-columns: 265px;
+		justify-content: center;
 	}
 }
 
 @media screen and (max-width: 375px) {
 	.cardgroup {
 		padding: 0 40px;
-		grid-template-columns: 1fr;
+		grid-template-columns: 265px;
 	}
 }

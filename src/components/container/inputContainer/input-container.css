@@ -5,7 +5,7 @@
 	width: 100%;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 750px) {
 	.input-container {
 		justify-content: flex-start;
 		flex-direction: column;

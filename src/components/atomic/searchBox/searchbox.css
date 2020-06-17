@@ -52,7 +52,7 @@
 	}
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 750px) {
 	.searchbox-container {
 		width: 100%;
 		margin-bottom: 40px;
